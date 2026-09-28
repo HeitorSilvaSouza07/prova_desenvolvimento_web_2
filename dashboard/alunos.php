@@ -6,7 +6,6 @@ require_role(['admin', 'professor']);
 $user = current_user();
 $pdo  = db();
 
-/* ------------------------------ Cadastro ------------------------------ */
 if (is_post() && ($_POST['acao'] ?? '') === 'criar') {
     if (!csrf_check()) {
         flash_set('error', 'Sessão expirada. Recarregue a página e tente novamente.');
@@ -60,7 +59,7 @@ if (is_post() && ($_POST['acao'] ?? '') === 'criar') {
     redirect(app_url('dashboard/alunos.php'));
 }
 
-/* -------------------------- Ativar / desativar ------------------------ */
+
 if (is_post() && ($_POST['acao'] ?? '') === 'alternar') {
     if ($user['tipo'] !== 'admin' || !csrf_check()) {
         flash_set('error', 'Apenas o administrador pode alterar o status do usuário.');

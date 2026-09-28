@@ -8,7 +8,7 @@ $pdo  = db();
 
 $turmaSelecionada = (int) ($_REQUEST['turma'] ?? 0);
 
-/* --------------------------- Salvar vínculos -------------------------- */
+
 if (is_post() && ($_POST['acao'] ?? '') === 'salvar') {
     if (!csrf_check()) {
         flash_set('error', 'Sessão expirada. Recarregue a página e tente novamente.');
@@ -79,7 +79,7 @@ if (is_post() && ($_POST['acao'] ?? '') === 'salvar') {
     redirect(app_url('dashboard/vinculos.php?turma=' . $turmaId));
 }
 
-/* ------------------------------- Dados -------------------------------- */
+
 $turmas = $pdo->query('SELECT t.*, (SELECT COUNT(*) FROM turma_alunos ta WHERE ta.turma_id = t.id) AS total_alunos,
                        (SELECT COUNT(*) FROM turma_professores tp WHERE tp.turma_id = t.id) AS total_professores
                        FROM turmas t ORDER BY t.nome')->fetchAll();

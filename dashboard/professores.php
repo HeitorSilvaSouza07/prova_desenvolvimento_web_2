@@ -6,7 +6,7 @@ require_role(['admin', 'professor']);
 $user = current_user();
 $pdo = db();
 
-/* ------------------------------ Cadastro ------------------------------ */
+
 if (is_post() && ($_POST['acao'] ?? '') === 'criar') {
     if (!csrf_check()) {
         flash_set('error', 'Sessão expirada. Recarregue a página e tente novamente.');

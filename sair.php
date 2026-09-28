@@ -7,7 +7,7 @@ if (!empty($_COOKIE['prosiga_token'])) {
         $stmt = db()->prepare('UPDATE usuarios SET token = NULL WHERE token = :token');
         $stmt->execute([':token' => $hash]);
     } catch (Throwable $e) {
-        // continua com o logout mesmo sem banco
+
     }
     setcookie('prosiga_token', '', time() - 42000, '/');
 }

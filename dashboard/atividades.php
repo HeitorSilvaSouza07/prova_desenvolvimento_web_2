@@ -12,7 +12,6 @@ $placeholder = $turmaIds ? implode(',', $turmaIds) : '0';
 
 $tipos = ['tarefa' => 'Tarefa', 'trabalho' => 'Trabalho', 'exercicio' => 'Exercício', 'projeto' => 'Projeto', 'outro' => 'Outro'];
 
-/* ------------------------------ Agendar ------------------------------- */
 if (is_post() && ($_POST['acao'] ?? '') === 'criar') {
     if (!$podeGerenciar) {
         flash_set('error', 'Somente professores podem cadastrar atividades.');

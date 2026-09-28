@@ -1,9 +1,4 @@
 <?php
-/**
- * Sessão, usuário atual e proteção de rotas do painel.
- * Inclua apenas este arquivo nas páginas: ele carrega
- * config/database.php e includes/functions.php automaticamente.
- */
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/functions.php';
@@ -15,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
     ]);
 }
 
-/* "Manter-me conectado": restaura a sessão a partir do cookie de token. */
+
 if (empty($_SESSION['user_id']) && !empty($_COOKIE['prosiga_token'])) {
     try {
         $hash  = hash('sha256', (string) $_COOKIE['prosiga_token']);
@@ -31,10 +26,7 @@ if (empty($_SESSION['user_id']) && !empty($_COOKIE['prosiga_token'])) {
     }
 }
 
-/**
- * Retorna o usuário logado (array) ou null.
- * O resultado é memorizado durante a requisição.
- */
+
 function current_user(): ?array
 {
     static $cache = null;

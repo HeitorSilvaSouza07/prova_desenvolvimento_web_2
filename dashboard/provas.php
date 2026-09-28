@@ -10,7 +10,7 @@ $turmas = turmas_visiveis($pdo, $user);
 $turmaIds = array_map(fn($t) => (int) $t['id'], $turmas);
 $placeholder = $turmaIds ? implode(',', $turmaIds) : '0';
 
-/* ------------------------------ Agendar ------------------------------- */
+
 if (is_post() && ($_POST['acao'] ?? '') === 'criar') {
     if (!$podeGerenciar) {
         flash_set('error', 'Somente professores podem agendar provas.');

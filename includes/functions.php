@@ -1,7 +1,4 @@
 <?php
-/**
- * Funções utilitárias compartilhadas por todas as páginas.
- */
 
 if (!defined('PROSIGA_START')) {
     define('PROSIGA_START', microtime(true));
@@ -18,10 +15,7 @@ function redirect(string $path): void
     exit;
 }
 
-/**
- * Monta uma URL partindo da raiz da aplicação, funcionando tanto
- * nas páginas da raiz quanto dentro da pasta /dashboard.
- */
+
 function app_url(string $path = ''): string
 {
     static $base = null;
@@ -49,7 +43,6 @@ function base_url(string $path = ''): string
     return ltrim($path, '/');
 }
 
-/* ---------------------------- Sessão / flash ---------------------------- */
 
 function flash_set(string $type, string $message): void
 {
@@ -92,11 +85,7 @@ function csrf_check(): bool
     return is_string($sent) && !empty($_SESSION['csrf']) && hash_equals($_SESSION['csrf'], $sent);
 }
 
-/* --------------------------- Consultas úteis --------------------------- */
 
-/**
- * Turmas visíveis para o usuário logado (aluno vê apenas as vinculadas).
- */
 function turmas_visiveis(PDO $pdo, array $user): array
 {
     if ($user['tipo'] === 'aluno') {

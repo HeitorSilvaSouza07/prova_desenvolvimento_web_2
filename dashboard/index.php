@@ -26,7 +26,7 @@ $totalAulas = (int) $pdo->query("SELECT COUNT(*) FROM aulas WHERE data_aula >= '
 $proximasProvas = (int) $pdo->query("SELECT COUNT(*) FROM provas WHERE data_prova >= '$hoje' AND turma_id IN ($placeholder)")->fetchColumn();
 $atividadesAbertas = (int) $pdo->query("SELECT COUNT(*) FROM atividades WHERE data_entrega >= '$hoje' AND turma_id IN ($placeholder)")->fetchColumn();
 
-/* Próximos compromissos (aulas + provas + atividades) */
+
 $agenda = [];
 
 $stmt = $pdo->query(

@@ -1,12 +1,4 @@
 <?php
-/**
- * Cabeçalho do painel. A página precisa chamar require_login()
- * (ou require_role) antes de incluir este arquivo.
- *
- * Variáveis opcionais:
- *   $pageTitle — título da aba
- *   $active    — chave do item de menu destacado
- */
 
 $user = current_user();
 $pageTitle = $pageTitle ?? 'Painel';

@@ -6,7 +6,6 @@ $user = current_user();
 $podeGerenciar = pode_gerenciar($user);
 $pdo = db();
 
-/* ------------------------------ Cadastro ------------------------------ */
 if (is_post() && isset($_POST['acao']) && $_POST['acao'] === 'criar') {
     if (!$podeGerenciar) {
         flash_set('error', 'Você não tem permissão para criar turmas.');
