@@ -1,0 +1,833 @@
+/* ProSiga — Landing Page
+   Fontes: Playfair Display (wordmark/serif de destaque), Sora (títulos) e Inter (texto). */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+ 
+.pro-siga {
+  --navy: #16213e;
+  --navy-light: #22315c;
+  --accent: #6f9bd6;
+  --accent-strong: #4a7ec2;
+  --bg: #f6f9fd;
+  --surface: #ffffff;
+  --border: #e6ebf3;
+  --text: #182136;
+  --text-muted: #5c6478;
+ 
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --content-max: 1600px;
+  --side-pad: clamp(24px, 4.5vw, 72px);
+ 
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+ 
+.pro-siga * {
+  box-sizing: border-box;
+}
+ 
+.pro-siga__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+ 
+/* ---------- Header ---------- */
+ 
+.pro-siga__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px var(--side-pad);
+  width: 100%;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+ 
+.pro-siga__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+.pro-siga__logo-mark {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+ 
+.pro-siga__logo-mark--light {
+  filter: brightness(0) invert(1);
+}
+ 
+.pro-siga__wordmark {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+ 
+.pro-siga__wordmark--light {
+  color: #ffffff;
+}
+ 
+.pro-siga__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+ 
+.pro-siga__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+ 
+.pro-siga__nav-link {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+ 
+.pro-siga__nav-link:hover {
+  color: var(--navy);
+}
+ 
+.pro-siga__nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.pro-siga__btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+ 
+.pro-siga__btn:hover {
+  transform: translateY(-1px);
+}
+ 
+.pro-siga__btn:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+ 
+.pro-siga__btn--primary {
+  background: var(--navy);
+  color: #ffffff;
+}
+ 
+.pro-siga__btn--primary:hover {
+  box-shadow: 0 8px 20px rgba(22, 33, 62, 0.25);
+}
+ 
+.pro-siga__btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--navy);
+}
+ 
+.pro-siga__btn--ghost:hover {
+  border-color: var(--navy);
+}
+ 
+.pro-siga__inline-link {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
+ 
+.pro-siga__inline-link:hover {
+  text-decoration: underline;
+}
+
+
+ 
+/* ---------- Hero ---------- */
+ 
+.pro-siga__hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+  padding: 40px var(--side-pad) 72px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  animation: pro-siga-rise 0.7s ease-out both;
+  overflow: hidden;
+}
+ 
+.pro-siga__hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -160px;
+  width: 420px;
+  height: 420px;
+  z-index: 0;
+  pointer-events: none;
+}
+ 
+.pro-siga__hero-art,
+.pro-siga__hero-copy {
+  position: relative;
+  z-index: 1;
+}
+ 
+.pro-siga__hero-art {
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  min-height: 280px;
+}
+ 
+.pro-siga__hero-art .pro-siga__mascot {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+ 
+.pro-siga__eyebrow-free-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.18;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+ 
+.pro-siga__eyebrow-free-heading em {
+  font-style: normal;
+  color: var(--accent-strong);
+}
+ 
+.pro-siga__hero-copy p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 46ch;
+  margin: 0 0 28px;
+}
+ 
+.pro-siga__hero-stats {
+  display: flex;
+  gap: 36px;
+  margin: 36px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+ 
+.pro-siga__stat {
+  margin: 0;
+}
+ 
+.pro-siga__stat dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+ 
+.pro-siga__stat dd {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+ 
+/* ---------- Trust / testimonial band ---------- */
+ 
+.pro-siga__trust {
+  background: var(--navy);
+  padding: 56px 24px 88px;
+}
+ 
+.pro-siga__trust-intro {
+  max-width: var(--content-max);
+  margin: 0 auto 40px;
+  padding: 0 var(--side-pad);
+  text-align: left;
+}
+ 
+.pro-siga__trust-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #ffffff;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  margin: 0 0 10px;
+}
+ 
+.pro-siga__trust-sub {
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+  max-width: 46ch;
+}
+ 
+.pro-siga__testimonials {
+  max-width: var(--content-max);
+  margin: 0 auto -140px;
+  padding: 0 var(--side-pad);
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 20px;
+}
+ 
+.pro-siga__testimonial {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px 18px;
+  text-align: left;
+  box-shadow: 0 18px 30px -20px rgba(0, 0, 0, 0.3);
+}
+ 
+.pro-siga__testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+ 
+.pro-siga__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--navy-light));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+ 
+.pro-siga__testimonial-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+ 
+.pro-siga__testimonial-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+ 
+.pro-siga__testimonial-quote {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+ 
+/* ---------- Generic section heading (recursos / como funciona / faq) ---------- */
+ 
+.pro-siga__section {
+  padding: 200px var(--side-pad) 80px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+ 
+.pro-siga__section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  color: var(--navy);
+  max-width: 34ch;
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+ 
+.pro-siga__section-sub {
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin: 0 0 44px;
+}
+ 
+/* ---------- Feature grid (recursos) ---------- */
+ 
+.pro-siga__feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+}
+ 
+.pro-siga__feature {
+  text-align: left;
+  padding-right: 12px;
+}
+ 
+.pro-siga__feature-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--accent-strong);
+  background: rgba(111, 155, 214, 0.14);
+  border-radius: 10px;
+  padding: 9px;
+  box-sizing: content-box;
+  margin-bottom: 16px;
+}
+ 
+.pro-siga__feature h3 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+ 
+.pro-siga__feature p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 32ch;
+}
+ 
+/* ---------- How it works (steps / timeline) ---------- */
+ 
+.pro-siga__steps {
+  padding: 80px var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+ 
+.pro-siga__steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+ 
+.pro-siga__steps-list::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+ 
+.pro-siga__step {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+ 
+.pro-siga__step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+ 
+.pro-siga__step h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+ 
+.pro-siga__step p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 32ch;
+}
+ 
+/* ---------- Existing "professor / aluno" feature section (kept from original layout) ---------- */
+ 
+.pro-siga__features {
+  padding: 80px var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+.pro-siga__features-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  color: var(--navy);
+  max-width: 640px;
+  margin: 0 auto 16px;
+  line-height: 1.25;
+}
+ 
+.pro-siga__features-heading em {
+  font-style: normal;
+  color: var(--accent-strong);
+}
+ 
+.pro-siga__features-sub {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 48px;
+}
+ 
+.pro-siga__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+ 
+.pro-siga__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+ 
+.pro-siga__card .pro-siga__mascot {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  margin-bottom: 16px;
+}
+ 
+.pro-siga__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+ 
+.pro-siga__card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+ 
+.pro-siga__features-cta {
+  display: flex;
+  justify-content: center;
+}
+ 
+/* ---------- FAQ (two-column) ---------- */
+ 
+.pro-siga__faq {
+  padding: 80px var(--side-pad);
+  max-width: var(--content-max);
+  margin:  auto;
+}
+ 
+.pro-siga__faq-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+ 
+.pro-siga__faq-intro {
+  position: sticky;
+  top: 24px;
+}
+ 
+.pro-siga__faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.pro-siga__faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: hidden;
+}
+ 
+.pro-siga__faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 18px 20px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+ 
+.pro-siga__faq-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 40%;
+  background: var(--bg);
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+ 
+.pro-siga__faq-answer {
+  margin: 0;
+  padding: 0 20px 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 58ch;
+}
+ 
+/* ---------- Final CTA ---------- */
+ 
+.pro-siga__final-cta {
+  background: var(--navy);
+  border-radius: 24px;
+  max-width: 1620px;
+  margin: 40px auto 0;
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 24px;
+}
+ 
+.pro-siga__final-cta-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  color: #ffffff;
+  margin: 0 0 12px;
+  max-width: 22ch;
+}
+ 
+.pro-siga__final-cta-copy p {
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 24px;
+  max-width: 40ch;
+}
+ 
+.pro-siga__final-cta-mascot {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+  transform: scaleX(-1);
+}
+ 
+/* ---------- Footer ---------- */
+ 
+.pro-siga__footer {
+  background: var(--navy);
+  padding: 56px var(--side-pad) 32px;
+  margin-top: 40px;
+}
+ 
+.pro-siga__footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+ 
+.pro-siga__footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+ 
+.pro-siga__footer-tagline {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+  max-width: 32ch;
+  margin: 0;
+}
+ 
+.pro-siga__footer-col h3 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 16px;
+}
+ 
+.pro-siga__footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.pro-siga__footer-col a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+ 
+.pro-siga__footer-col a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+ 
+.pro-siga__footer-copy {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.82rem;
+  max-width: var(--content-max);
+  margin: 24px auto 0;
+  padding: 0 var(--side-pad);
+}
+ 
+/* ---------- Motion ---------- */
+ 
+@keyframes pro-siga-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .pro-siga__hero {
+    animation: none;
+  }
+}
+ 
+/* ---------- Responsive ---------- */
+ 
+@media (max-width: 900px) {
+  .pro-siga__hero {
+    grid-template-columns: 1fr;
+    padding-top: 8px;
+  }
+ 
+  .pro-siga__nav-links {
+    display: none;
+  }
+ 
+  .pro-siga__testimonials {
+    grid-template-columns: 1fr;
+    margin-bottom: -60px;
+  }
+ 
+  .pro-siga__section {
+    padding-top: 100px;
+  }
+ 
+  .pro-siga__feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .pro-siga__steps-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+ 
+  .pro-siga__steps-list::before {
+    display: none;
+  }
+ 
+  .pro-siga__cards {
+    grid-template-columns: 1fr;
+  }
+ 
+  .pro-siga__faq-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .pro-siga__faq-intro {
+    position: static;
+  }
+ 
+  .pro-siga__final-cta {
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 36px 28px;
+  }
+ 
+  .pro-siga__final-cta-mascot {
+    display: none;
+  }
+ 
+  .pro-siga__footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+  .pro-siga__footer-brand-col {
+    grid-column: 1 / -1;
+  }
+}
+ 
+@media (max-width: 560px) {
+  .pro-siga__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .pro-siga__nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+ 
+  .pro-siga__nav-actions {
+    width: 100%;
+  }
+ 
+  .pro-siga__btn {
+    flex: 1;
+    text-align: center;
+  }
+ 
+  .pro-siga__feature-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .pro-siga__hero-stats {
+    gap: 24px;
+  }
+ 
+  .pro-siga__footer-inner {
+    grid-template-columns: 1fr;
+  }
+}

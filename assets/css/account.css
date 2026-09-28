@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.account-page {
+	--account-navy: #052659;
+	--account-blue: #3b82f6;
+	--account-bg: #f4f8fc;
+	--account-display: 'Sora', 'Segoe UI', sans-serif;
+	--account-body: 'Inter', 'Segoe UI', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	color: #1e293b;
+	background: var(--account-bg);
+	font-family: var(--account-body);
+}
+
+.account-page *,
+.account-page *::before,
+.account-page *::after {
+	box-sizing: border-box;
+}
+
+.account-page a {
+	color: inherit;
+}
+
+.account-header,
+.account-main,
+.account-footer {
+	width: min(1180px, calc(100% - 48px));
+	margin: 0 auto;
+}
+
+.account-header {
+	display: flex;
+	align-items: center;
+	gap: 42px;
+	padding: 26px 0;
+}
+
+.account-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--account-navy);
+	text-decoration: none;
+	font: 700 1.5rem 'Playfair Display', Georgia, serif;
+}
+
+.account-brand__mark {
+	display: grid;
+	place-items: center;
+	width: 35px;
+	height: 35px;
+}
+
+.account-brand__mark img {
+	width: 35px;
+	height: 35px;
+	object-fit: contain;
+}
+
+.account-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 44px 0 78px;
+}
+
+.account-heading {
+	max-width: 650px;
+	text-align: center;
+}
+
+.account-eyebrow {
+	display: inline-block;
+	margin-bottom: 14px;
+	color: var(--account-blue);
+	font-size: .7rem;
+	font-weight: 700;
+	letter-spacing: .13em;
+	text-transform: uppercase;
+}
+
+.account-heading h1 {
+	margin: 0 0 12px;
+	color: var(--account-navy);
+	font: 700 clamp(2.1rem, 4vw, 3.3rem)/1.12 var(--account-display);
+	letter-spacing: -.02em;
+}
+
+.account-heading__accent {
+	color: var(--account-blue);
+}
+
+.account-heading p {
+	margin: 0;
+	color: #64748b;
+	font-size: .95rem;
+}
+
+.account-options {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(260px, 360px));
+	gap: 22px;
+	margin-top: 42px;
+}
+
+.account-option {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	min-height: 170px;
+	padding: 28px 24px;
+	border: 1px solid #dbe4f0;
+	border-radius: 18px;
+	color: #1e293b;
+	background: #fff;
+	box-shadow: 0 10px 28px rgba(5, 38, 89, .05);
+	text-decoration: none;
+	transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.account-option:hover {
+	border-color: #93c5fd;
+	box-shadow: 0 16px 32px rgba(5, 38, 89, .1);
+	transform: translateY(-3px);
+}
+
+.account-option__icon {
+	display: grid;
+	place-items: center;
+	flex: 0 0 auto;
+	width: 58px;
+	height: 58px;
+	border-radius: 15px;
+	color: #2563eb;
+	background: #dbeafe;
+}
+
+.account-option__icon--student {
+	color: #052659;
+	background: #e0e7ff;
+}
+
+.account-option__icon svg {
+	width: 60px;
+	height: 60px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.6;
+}
+
+.account-option__content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.account-option__content strong {
+	color: var(--account-navy);
+	font: 700 1.35rem var(--account-display);
+}
+
+.account-option__content span {
+	color: #64748b;
+	font-size: .78rem;
+	line-height: 1.55;
+}
+
+.account-option > svg {
+	width: 19px;
+	height: 19px;
+	flex: 0 0 auto;
+	fill: none;
+	stroke: #94a3b8;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
+.account-option:hover > svg {
+	color: var(--account-blue);
+	transform: translateX(3px);
+}
+
+.account-login {
+	margin: 38px 0 0;
+	color: #64748b;
+	font-size: .78rem;
+}
+
+.account-login a {
+	color: #2563eb;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.account-login a:hover {
+	text-decoration: underline;
+}
+
+.account-footer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 19px 0;
+	color: #cbd5e1;
+	font-size: .7rem;
+	width: 100%;
+	max-width: none;
+	padding-right: max(24px, calc((100% - 1180px) / 2));
+	padding-left: max(24px, calc((100% - 1180px) / 2));
+	background: var(--account-navy);
+}
+
+.account-footer strong {
+	margin-right: 8px;
+	color: white;
+	font: 700 .9rem 'Playfair Display', Georgia, serif;
+}
+
+.account-footer__brand {
+	display: inline-flex;
+	align-items: center;
+}
+
+.account-footer__brand img {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+	filter: brightness(0) invert(1);
+}
+
+.account-footer__links {
+	display: flex;
+	gap: 25px;
+}
+
+.account-footer a {
+	color: #cbd5e1;
+	text-decoration: none;
+}
+
+.account-footer a:hover {
+	color: var(--account-blue);
+}
+
+@media (max-width: 800px) {
+	.account-header,
+	.account-main {
+		width: min(100% - 32px, 560px);
+	}
+
+	.account-footer {
+		width: 100%;
+		padding-right: 32px;
+		padding-left: 32px;
+	}
+
+	.account-header {
+		gap: 18px;
+		padding: 18px 0;
+		flex-wrap: wrap;
+	}
+
+	.account-main {
+		padding: 36px 0 55px;
+	}
+
+	.account-options {
+		grid-template-columns: 1fr;
+		width: min(100%, 420px);
+		margin-top: 32px;
+	}
+
+	.account-option {
+		min-height: 140px;
+	}
+
+	.account-footer {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.account-footer__links {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px 18px;
+	}
+}
+
+@media (max-width: 460px) {
+	.account-header,
+	.account-main {
+		width: calc(100% - 28px);
+	}
+
+	.account-footer {
+		padding-right: 14px;
+		padding-left: 14px;
+	}
+
+	.account-brand {
+		font-size: 1.3rem;
+	}
+
+	.account-heading h1 {
+		font-size: 2.15rem;
+	}
+
+	.account-option {
+		padding: 22px 18px;
+	}
+
+	.account-option__icon {
+		width: 50px;
+		height: 50px;
+	}
+
+	.account-option__content strong {
+		font-size: 1.2rem;
+	}
+}
