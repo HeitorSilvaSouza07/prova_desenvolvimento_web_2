@@ -22,7 +22,7 @@ if (empty($_SESSION['user_id']) && !empty($_COOKIE['prosiga_token'])) {
             $_SESSION['user_id'] = (int) $row['id'];
         }
     } catch (Throwable $e) {
-        // banco indisponível: segue sem sessão
+       $_SESSION['error'] = $e->getMessage();
     }
 }
 

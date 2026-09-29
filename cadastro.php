@@ -194,11 +194,6 @@ if (is_post()) {
             </label>
           </div>
 
-          <label class="signup-checkbox">
-            <input type="checkbox" required>
-            <span>Li e aceito os <a href="#termos">Termos de Uso</a> e a <a href="#privacidade">Política de Privacidade</a>.</span>
-          </label>
-
           <button type="submit" class="signup-submit">
             Criar Conta
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -212,7 +207,6 @@ if (is_post()) {
 
   <footer class="signup-footer" id="ajuda">
     <span class="signup-footer__brand"><img src="<?= e(app_url('assets/img/logo-mark.png')) ?>" alt=""><strong>ProSiga</strong> © <?= date('Y') ?> Todos os direitos reservados.</span>
-    <span class="signup-footer__links"><a href="#termos">Termos de Uso</a><a href="#privacidade">Política de Privacidade</a><a href="#suporte">Suporte Técnico</a></span>
   </footer>
 </div>
 <script src="<?= e(app_url('assets/js/auth.js')) ?>"></script>
